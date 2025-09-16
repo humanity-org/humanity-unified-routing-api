@@ -468,6 +468,7 @@ describe('quote', function () {
     [ChainId.ABSTRACT_MAINNET]: USDC_ON(ChainId.ABSTRACT_MAINNET),
     [ChainId.ANIME]: USDC_ON(ChainId.ANIME),
     [ChainId.ANIME_TESTNET]: USDC_ON(ChainId.ANIME_TESTNET),
+    [ChainId.HUMANITY]: USDC_ON(ChainId.HUMANITY),
     [ChainId.MODE]: USDC_ON(ChainId.MODE),
   };
 
@@ -507,6 +508,7 @@ describe('quote', function () {
     [ChainId.ABSTRACT_MAINNET]: WNATIVE_ON(ChainId.ABSTRACT_MAINNET),
     [ChainId.ANIME]: WNATIVE_ON(ChainId.ANIME),
     [ChainId.ANIME_TESTNET]: WNATIVE_ON(ChainId.ANIME_TESTNET),
+    [ChainId.HUMANITY]: WNATIVE_ON(ChainId.HUMANITY),
     [ChainId.MODE]: WNATIVE_ON(ChainId.MODE),
   };
 

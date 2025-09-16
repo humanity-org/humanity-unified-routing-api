@@ -1,4 +1,4 @@
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import Logger from 'bunyan';
 import { QuoteByKey, QuoteContext } from '.';
 import { RoutingType } from '../../constants';
@@ -35,7 +35,7 @@ export class ClassicQuoteContext implements QuoteContext {
         quote.request.info.tokenInChainId,
         quote.request.info.swapper,
         quote.request.info.tokenIn,
-        UNIVERSAL_ROUTER_ADDRESS(quote.request.info.tokenInChainId)
+        UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, quote.request.info.tokenInChainId)
       );
 
       (quote as ClassicQuote).setAllowanceData(allowance);

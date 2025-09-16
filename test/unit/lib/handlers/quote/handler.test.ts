@@ -47,7 +47,7 @@ import {
 
 import { PermitDetails } from '@uniswap/permit2-sdk';
 import { DutchOrderInfoJSON, RelayOrderInfoJSON } from '@uniswap/uniswapx-sdk';
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { MetricsLogger } from 'aws-embedded-metrics';
 import { APIGatewayProxyEventHeaders } from 'aws-lambda/trigger/api-gateway-proxy';
 import { AxiosError } from 'axios';
@@ -736,7 +736,7 @@ describe('QuoteHandler', () => {
           CLASSIC_REQUEST_BODY.tokenInChainId,
           SWAPPER,
           CLASSIC_REQUEST_BODY.tokenIn,
-          UNIVERSAL_ROUTER_ADDRESS(1)
+          UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, 1)
         );
         jest.clearAllTimers();
       });
@@ -767,7 +767,7 @@ describe('QuoteHandler', () => {
           CLASSIC_REQUEST_BODY.tokenInChainId,
           SWAPPER,
           CLASSIC_REQUEST_BODY.tokenIn,
-          UNIVERSAL_ROUTER_ADDRESS(1)
+          UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, 1)
         );
         jest.clearAllTimers();
       });

@@ -1,7 +1,7 @@
 import { Protocol } from '@uniswap/router-sdk';
 import { ChainId, Currency, Ether, WETH9 } from '@uniswap/sdk-core';
 import { DAI_MAINNET, USDC_MAINNET, WBTC_MAINNET } from '@uniswap/smart-order-router';
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { BigNumber } from 'ethers';
 import { getAddress } from 'ethers/lib/utils';
 import { BPS, RoutingType } from '../lib/constants';
@@ -100,7 +100,7 @@ export const PERMIT2_USED = {
       expiration: '2592000',
       nonce: '1',
     },
-    spender: UNIVERSAL_ROUTER_ADDRESS(1),
+    spender: UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, 1),
     sigDeadline: '1800',
   },
 };
@@ -138,7 +138,7 @@ export const PERMIT2_POLYGON = {
       expiration: '2592000',
       nonce: '0',
     },
-    spender: UNIVERSAL_ROUTER_ADDRESS(137),
+    spender: UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, 137),
     sigDeadline: '1800',
   },
 };
