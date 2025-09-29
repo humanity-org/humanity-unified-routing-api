@@ -254,6 +254,12 @@ export abstract class ChainConfigManager {
       },
       alarmEnabled: false,
     },
+    [ChainId.HUMANITY]: {
+      routingTypes: {
+        [RoutingType.CLASSIC]: {},
+      },
+      alarmEnabled: false,
+    },
     [ChainId.MODE]: {
       routingTypes: {
         [RoutingType.CLASSIC]: {},

@@ -1,5 +1,5 @@
 import { RelayOrder, RelayOrderBuilder, RelayOrderInfoJSON } from '@uniswap/uniswapx-sdk';
-import { SwapRouter, UniswapTrade, UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { SwapRouter, UniswapTrade, UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { BigNumber, ethers } from 'ethers';
 
 import { PermitBatchTransferFromData } from '@uniswap/permit2-sdk';
@@ -177,7 +177,7 @@ export class RelayQuote implements IQuote {
       .input({
         token: this.tokenIn,
         amount: this.amountIn,
-        recipient: UNIVERSAL_ROUTER_ADDRESS(this.chainId),
+        recipient: UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, this.chainId),
       })
       // Add the gas token input to the filler
       .fee({

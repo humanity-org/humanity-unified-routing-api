@@ -1,5 +1,5 @@
 import { AllowanceTransfer, MaxAllowanceTransferAmount, permit2Address, PermitSingleData } from '@uniswap/permit2-sdk';
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import ms from 'ms';
 
 const PERMIT_EXPIRATION = ms('30d');
@@ -18,7 +18,7 @@ export function createPermitData(tokenAddress: string, chainId: number, nonce: s
       expiration: toDeadline(PERMIT_EXPIRATION).toString(),
       nonce: nonce,
     },
-    spender: UNIVERSAL_ROUTER_ADDRESS(chainId),
+    spender: UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, chainId),
     sigDeadline: toDeadline(PERMIT_SIG_EXPIRATION).toString(),
   };
 

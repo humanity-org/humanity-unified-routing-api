@@ -1,7 +1,7 @@
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 import { DAI_MAINNET, ID_TO_NETWORK_NAME, USDC_MAINNET, USDT_MAINNET } from '@uniswap/smart-order-router';
 import { RelayOrder } from '@uniswap/uniswapx-sdk';
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { AxiosResponse } from 'axios';
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
@@ -34,7 +34,7 @@ describe.skip('relayQuote', function () {
     [alice] = await baseTest.before();
     // deploy reactor
     const factory = new RelayOrderReactor__factory(alice);
-    const reactorContract = await baseTest.deployContract(factory, [UNIVERSAL_ROUTER_ADDRESS(1)]);
+    const reactorContract = await baseTest.deployContract(factory, [UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, 1)]);
     reactorAddress = reactorContract.address;
   });
 
