@@ -40,4 +40,4 @@ jobs:
         run: npx cdk deploy UnifiedRoutingStack --require-approval never
         env:
           ROUTING_API_URL: ${{ secrets.ROUTING_API_URL }}
-          RPC_6985385: ${{ secrets.RPC_6985385 }}
+          RPC_13600000: ${{ secrets.RPC_13600000 }}
