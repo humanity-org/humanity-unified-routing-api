@@ -1,0 +1,42 @@
+# Deploy the Humanity Unified Routing API (URA) to Humanity's AWS via AWS CDK.
+# URA is what the interface calls for swap quotes; it proxies CLASSIC routing to
+# the humanity-routing-api (ROUTING_API_URL). Assumes cicd-staging-app-cdk-deploy
+# (devops/terraform/cicd), which trusts this repo on the staging branch.
+name: cdk-deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      bootstrap:
+        description: "Run cdk bootstrap (idempotent; account already bootstrapped)"
+        type: boolean
+        default: false
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install deps (patch-package applies HUMANITY patches)
+        run: npm install --no-audit --no-fund
+      - name: Build
+        run: npm run build
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::436020120719:role/cicd-staging-app-cdk-deploy
+          aws-region: us-east-1
+      - name: CDK bootstrap
+        if: ${{ inputs.bootstrap }}
+        run: npx cdk bootstrap aws://436020120719/us-east-1
+      - name: CDK deploy UnifiedRoutingStack
+        run: npx cdk deploy UnifiedRoutingStack --require-approval never
+        env:
+          ROUTING_API_URL: ${{ secrets.ROUTING_API_URL }}
+          RPC_6985385: ${{ secrets.RPC_6985385 }}
