@@ -594,7 +594,7 @@ index 9b51cd7..f864263 100644
 +    34443?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
-+    6985385?: {
++    13600000?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
  }>;
@@ -640,7 +640,7 @@ index 9b51cd7..f864263 100644
 +    34443?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
-+    6985385?: {
++    13600000?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
  }>;
@@ -731,7 +731,7 @@ index a9f6af7..80553e1 100644
 +    [sdk_core_1.ChainId.ABSTRACT_MAINNET]: new sdk_core_1.Token(sdk_core_1.ChainId.ABSTRACT_MAINNET, '0x3439153EB7AF838Ad19d56E1571FBD09333C2809', 18, 'WETH', 'Wrapped Ether'),
 +    [sdk_core_1.ChainId.ANIME_TESTNET]: new sdk_core_1.Token(sdk_core_1.ChainId.ANIME_TESTNET, '0x8f3e2785985aa4005c63f97f7cc89ce91a948267', 18, 'WETH', 'Wrapped Ether'),
 +    [sdk_core_1.ChainId.ANIME]: new sdk_core_1.Token(sdk_core_1.ChainId.ANIME, '0x164906a76f1A2Ea933366c446AE0Ec6a37062c42', 18, 'WANIME', 'Wrapped ANIME'),
-+    [sdk_core_1.ChainId.HUMANITY]: new sdk_core_1.Token(sdk_core_1.ChainId.HUMANITY, '0x31B1AaE8325C36534549b52d94bC6452f246c41E', 18, 'WH', 'Wrapped HUMANITY'),
++    [sdk_core_1.ChainId.HUMANITY]: new sdk_core_1.Token(sdk_core_1.ChainId.HUMANITY, '0xCdf3aE17d13C10859C8D4F7d75C8a543fCED1b9C', 18, 'WH', 'Wrapped HUMANITY'),
 +    [sdk_core_1.ChainId.MODE]: new sdk_core_1.Token(sdk_core_1.ChainId.MODE, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
  };
  exports.BEACON_CHAIN_DEPOSIT_ADDRESS = '0x00000000219ab540356cBB839Cbe05303d7705Fa';
@@ -895,7 +895,7 @@ index 5ae36f2..eed3aae 100644
 +            return sdk_core_1.ChainId.ANIME;
 +        case 34443:
 +            return sdk_core_1.ChainId.MODE;
-+        case 6985385:
++        case 13600000:
 +            return sdk_core_1.ChainId.HUMANITY;
          default:
              throw new Error(`Unknown chain id: ${id}`);
@@ -1040,7 +1040,7 @@ index 5ae36f2..eed3aae 100644
 +            return ChainName.ANIME_TESTNET;
 +        case 69000:
 +            return ChainName.ANIME;
-+        case 6985385:
++        case 13600000:
 +            return ChainName.HUMANITY;
 +        case 34443:
 +            return ChainName.MODE;
@@ -1095,7 +1095,7 @@ index 5ae36f2..eed3aae 100644
 +    [sdk_core_1.ChainId.ABSTRACT_MAINNET]: new sdk_core_1.Token(sdk_core_1.ChainId.ABSTRACT_MAINNET, '0x3439153EB7AF838Ad19d56E1571FBD09333C2809', 18, 'WETH', 'Wrapped Ether'),
 +    [sdk_core_1.ChainId.ANIME_TESTNET]: new sdk_core_1.Token(sdk_core_1.ChainId.ANIME_TESTNET, '0x8f3e2785985aa4005c63f97f7cc89ce91a948267', 18, 'WETH', 'Wrapped Ether'),
 +    [sdk_core_1.ChainId.ANIME]: new sdk_core_1.Token(sdk_core_1.ChainId.ANIME, '0x164906a76f1A2Ea933366c446AE0Ec6a37062c42', 18, 'WANIME', 'Wrapped ANIME'),
-+    [sdk_core_1.ChainId.HUMANITY]: new sdk_core_1.Token(sdk_core_1.ChainId.HUMANITY, '0x31B1AaE8325C36534549b52d94bC6452f246c41E', 18, 'WH', 'Wrapped HUMANITY'),
++    [sdk_core_1.ChainId.HUMANITY]: new sdk_core_1.Token(sdk_core_1.ChainId.HUMANITY, '0xCdf3aE17d13C10859C8D4F7d75C8a543fCED1b9C', 18, 'WH', 'Wrapped HUMANITY'),
 +    [sdk_core_1.ChainId.MODE]: new sdk_core_1.Token(sdk_core_1.ChainId.MODE, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
  };
  function isMatic(chainId) {
@@ -1792,7 +1792,7 @@ index 9b51cd7..f864263 100644
 +    34443?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
-+    6985385?: {
++    13600000?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
  }>;
@@ -1838,7 +1838,7 @@ index 9b51cd7..f864263 100644
 +    34443?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
-+    6985385?: {
++    13600000?: {
 +        [tokenAddress: string]: Token[];
 +    } | undefined;
  }>;
@@ -1977,7 +1977,7 @@ index 4f4aa8e..1fb433d 100644
 +    [ChainId.ABSTRACT_MAINNET]: new Token(ChainId.ABSTRACT_MAINNET, '0x3439153EB7AF838Ad19d56E1571FBD09333C2809', 18, 'WETH', 'Wrapped Ether'),
 +    [ChainId.ANIME_TESTNET]: new Token(ChainId.ANIME_TESTNET, '0x8f3e2785985aa4005c63f97f7cc89ce91a948267', 18, 'WETH', 'Wrapped Ether'),
 +    [ChainId.ANIME]: new Token(ChainId.ANIME, '0x164906a76f1A2Ea933366c446AE0Ec6a37062c42', 18, 'WANIME', 'Wrapped ANIME'),
-+    [ChainId.HUMANITY]: new Token(ChainId.HUMANITY, '0x31B1AaE8325C36534549b52d94bC6452f246c41E', 18, 'WH', 'Wrapped HUMANITY'),
++    [ChainId.HUMANITY]: new Token(ChainId.HUMANITY, '0xCdf3aE17d13C10859C8D4F7d75C8a543fCED1b9C', 18, 'WH', 'Wrapped HUMANITY'),
 +    [ChainId.MODE]: new Token(ChainId.MODE, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
  };
  export const BEACON_CHAIN_DEPOSIT_ADDRESS = '0x00000000219ab540356cBB839Cbe05303d7705Fa';
@@ -2141,7 +2141,7 @@ index 6b222cc..a54bead 100644
 +            return ChainId.ANIME;
 +        case 34443:
 +            return ChainId.MODE;
-+        case 6985385:
++        case 13600000:
 +            return ChainId.HUMANITY;
          default:
              throw new Error(`Unknown chain id: ${id}`);
@@ -2286,7 +2286,7 @@ index 6b222cc..a54bead 100644
 +            return ChainName.ANIME_TESTNET;
 +        case 69000:
 +            return ChainName.ANIME;
-+        case 6985385:
++        case 13600000:
 +            return ChainName.HUMANITY;
 +        case 34443:
 +            return ChainName.MODE;
@@ -2341,7 +2341,7 @@ index 6b222cc..a54bead 100644
 +    [ChainId.ABSTRACT_MAINNET]: new Token(ChainId.ABSTRACT_MAINNET, '0x3439153EB7AF838Ad19d56E1571FBD09333C2809', 18, 'WETH', 'Wrapped Ether'),
 +    [ChainId.ANIME_TESTNET]: new Token(ChainId.ANIME_TESTNET, '0x8f3e2785985aa4005c63f97f7cc89ce91a948267', 18, 'WETH', 'Wrapped Ether'),
 +    [ChainId.ANIME]: new Token(ChainId.ANIME, '0x164906a76f1A2Ea933366c446AE0Ec6a37062c42', 18, 'WANIME', 'Wrapped ANIME'),
-+    [ChainId.HUMANITY]: new Token(ChainId.HUMANITY, '0x31B1AaE8325C36534549b52d94bC6452f246c41E', 18, 'WH', 'Wrapped HUMANITY'),
++    [ChainId.HUMANITY]: new Token(ChainId.HUMANITY, '0xCdf3aE17d13C10859C8D4F7d75C8a543fCED1b9C', 18, 'WH', 'Wrapped HUMANITY'),
 +    [ChainId.MODE]: new Token(ChainId.MODE, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
  };
  function isMatic(chainId) {
