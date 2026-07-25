@@ -24,10 +24,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - name: Install deps (patch-package applies HUMANITY patches)
-        run: npm install --no-audit --no-fund
+      - run: corepack enable
+      - name: Install deps (yarn respects the lockfile so patch-package's pinned versions match)
+        run: yarn install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: yarn build
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::436020120719:role/cicd-staging-app-cdk-deploy
